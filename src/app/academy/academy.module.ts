@@ -17,7 +17,7 @@ import {
   MatCheckboxModule,
   MatChipsModule,
   MatNativeDateModule,
-  MatPaginatorModule,
+  MatPaginatorModule, MatSnackBar, MatSnackBarModule,
   MatSortModule,
   MatTooltipModule
 } from '@angular/material';
@@ -28,6 +28,7 @@ import {CohortListPage} from './cohort-list.page';
 import {ApprenticeDetailPage} from './apprentice-detail.page';
 import {CohortDetailPage} from './cohort-detail.page';
 import {CohortStatusPipe} from './cohort-status.pipe';
+import {ApprenticeCreatorDialog} from './apprentice-creator.dialog';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import {CohortStatusPipe} from './cohort-status.pipe';
     MatTooltipModule,
     MatChipsModule,
     MatButtonToggleModule,
+    MatSnackBarModule,
   ],
   declarations: [
     ApprenticeListPage,
@@ -60,9 +62,12 @@ import {CohortStatusPipe} from './cohort-status.pipe';
     CohortListPage,
     CohortDetailPage,
     CohortStatusPipe,
+    ApprenticeCreatorDialog,
   ],
-  exports: []
-
+  exports: [],
+  entryComponents: [
+    ApprenticeCreatorDialog,
+  ]
 })
 export class AcademyModule {
 }

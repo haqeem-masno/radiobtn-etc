@@ -11,7 +11,7 @@
          fxLayoutAlign="space-around stretch"
          style="background-color: white;">
 
-      <form [formGroup]="mainForm" (ngSubmit)="onSubmit()" fxLayout="column" fxFlex="100">
+      <form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)" fxLayout="column" fxFlex="100">
 
         <!--code-->
         <mat-form-field class="width">
@@ -29,7 +29,9 @@
                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
         </mat-form-field>
 
-        <button style="font-weight: bold;" mat-raised-button type="submit" class="mat-headline center-align">Submit
+        <button style="font-weight: bold;"
+                mat-raised-button type="submit"
+                class="mat-headline center-align">Submit
         </button>
       </form>
     </div>
