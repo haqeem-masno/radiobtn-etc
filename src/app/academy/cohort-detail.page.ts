@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Cohort} from './cohort.model';
 import {CohortStatus} from './cohort-status.enum';
+import {MatDialog, MatDialogConfig, MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import {ApprenticeCreatorDialog} from './apprentice-creator.dialog';
 @Component({
   selector: 'trg-cohort-detail',
   templateUrl: './cohort-detail.page.html',
@@ -40,4 +42,5 @@ export class CohortDetailPage implements OnInit {
     console.log('');
     this.submitted = true;
   }
+
 }

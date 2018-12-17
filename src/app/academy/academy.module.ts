@@ -17,7 +17,11 @@ import {
   MatCheckboxModule,
   MatChipsModule,
   MatNativeDateModule,
-  MatPaginatorModule, MatSnackBar, MatSnackBarModule,
+  MatPaginatorModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSliderModule, MatSlideToggleModule,
+  MatSnackBarModule,
   MatSortModule,
   MatTooltipModule
 } from '@angular/material';
@@ -29,6 +33,8 @@ import {ApprenticeDetailPage} from './apprentice-detail.page';
 import {CohortDetailPage} from './cohort-detail.page';
 import {CohortStatusPipe} from './cohort-status.pipe';
 import {ApprenticeCreatorDialog} from './apprentice-creator.dialog';
+import {HelloWorldDialog} from './hello-world.dialog';
+import {TestDialog} from './test.dialog';
 
 @NgModule({
   imports: [
@@ -55,6 +61,10 @@ import {ApprenticeCreatorDialog} from './apprentice-creator.dialog';
     MatChipsModule,
     MatButtonToggleModule,
     MatSnackBarModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSlideToggleModule,
   ],
   declarations: [
     ApprenticeListPage,
@@ -63,11 +73,15 @@ import {ApprenticeCreatorDialog} from './apprentice-creator.dialog';
     CohortDetailPage,
     CohortStatusPipe,
     ApprenticeCreatorDialog,
+    HelloWorldDialog,
+    TestDialog,
   ],
   exports: [],
   entryComponents: [
     ApprenticeCreatorDialog,
-  ]
+    HelloWorldDialog,
+    TestDialog,
+  ],
 })
 export class AcademyModule {
 }

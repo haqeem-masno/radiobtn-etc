@@ -1,0 +1,71 @@
+<div fxFlex class="form-component-holder mat-elevation-z4">
+  <mat-toolbar class="form-header">
+    <h1 class="mat-headline center-align">Your Info Here</h1>
+  </mat-toolbar>
+
+  <div [hidden]="submitted"
+       fxLayout="column"
+       class="widgetHolder-content"
+       fxLayoutAlign="space-around stretch"
+       style="background-color: white;">
+
+    <form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)" fxLayout="column" fxFlex="100">
+
+      <!--name-->
+      <mat-form-field class="width">
+        <input type="text" matInput placeholder="Enter Your Name" formControlName="name" required>
+      </mat-form-field>
+
+      <!--age-->
+      <mat-form-field class="width">
+        <input type="number" matInput placeholder="Enter your age" formControlName="age">
+      </mat-form-field>
+
+      <!--icNum-->
+      <mat-form-field class="width">
+        <input type="text" matInput placeholder="Enter Your ic number" formControlName="icNum" required
+               pattern="\d{6}-\d{2}-\d{4}">
+      </mat-form-field>
+
+      <!--rating-->
+      <mat-slider thumbLabel
+                  min="1" max="5" step="0.5" value="1.5" placeholder="Rate us bebeh" formControlName="rating">0
+      </mat-slider>
+
+      <!--gender-->
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field>
+        <mat-select placeholder="State" formControlName="state">
+          <mat-option value="johor">Johor</mat-option>
+          <mat-option value="melaka">Melaka</mat-option>
+          <mat-option value="kualaLumpur">Kuala Lumpur</mat-option>
+          <mat-option value="perak">Perak</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-paginator [length]="100"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+
+
+      <!--agree-->
+     <mat-slide-toggle formControlName="agree">
+       Agree?
+     </mat-slide-toggle>
+
+
+
+
+
+      <button style="font-weight: bold;"
+              mat-raised-button type="submit"
+              class="mat-headline center-align" matTooltip="Ini untuk hantau">Submit
+      </button>
+    </form>
+  </div>
+</div>

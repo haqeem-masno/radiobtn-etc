@@ -5,6 +5,7 @@ import {Apprentice} from './apprentice.model';
 import {Router} from '@angular/router';
 import {MatDialog, MatDialogConfig, MatSnackBar, MatSnackBarConfig} from '@angular/material';
 import {ApprenticeCreatorDialog} from './apprentice-creator.dialog';
+import {HelloWorldDialog} from './hello-world.dialog';
 
 @Component({
   selector: 'trg-apprentice-list',
@@ -40,5 +41,8 @@ export class ApprenticeListPage implements OnInit {
       this.snackBar.open('Message has been sent', '',
         <MatSnackBarConfig>{duration: 3000});
     });
+  }
+  showHelloWorld(): void {
+    this.dialog.open(HelloWorldDialog);
   }
 }
